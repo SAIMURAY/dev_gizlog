@@ -5,16 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Attendance;
-use App\Models\DailyReport;
-use DB;
-use Carbon;
 
 class DailyReport extends Model
 {
     use SoftDeletes;
-    protected $guarded = [
-        'id'
+    protected $fillable = [
+        'user_id',
+        'title',
+        'content',
+        'reporting_time',
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     public function getByUserId($userId)
