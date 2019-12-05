@@ -10,7 +10,7 @@
       @else
         {!! Form::input('month', 'search_month', null, ['class' => 'form-control']) !!}
       @endif
-        <button type="submit" class="btn btn-icon"><i class="fa fa-search"></i></button>
+      <button type="submit" class="btn btn-icon"><i class="fa fa-search"></i></button>
     {!! Form::close() !!}
     <a class="btn btn-icon" href="dailyreport/create"><i class="fa fa-plus"></i></a>
   </div>

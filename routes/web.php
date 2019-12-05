@@ -30,6 +30,7 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
 
 
     Route::get('home', 'UserController@index')->name('home');
+
     Route::resource('dailyreport', DailyReportController::class);
     Route::get('delete/{id}', 'DailyReportController@delete')->name('dailyreport.delete');
 

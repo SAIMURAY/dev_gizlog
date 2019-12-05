@@ -5,8 +5,7 @@
 <div class="main-wrap">
   <div class="container">
     {!! Form::open(['route' => 'dailyreport.store']) !!}
-      {!! Form::hidden('user_id') !!}
-      <input class="form-control" name="user_id" type="hidden">
+      {!! Form::hidden('user_id', Auth::id(), ['id' => 'user_id']) !!}
       <div class="form-group form-size-small {{ $errors->has('reporting_time') ? 'has-error' : '' }}">
         {!! Form::date('reporting_time', \Carbon\Carbon::now(), ['class'=>'date', 'required', 'class' => 'form-control']) !!}
         <span class="help-block">{{ $errors->first('reporting_time') }}</span>

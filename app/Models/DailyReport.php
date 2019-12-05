@@ -20,7 +20,7 @@ class DailyReport extends Model
     public function getByUserId($userId)
         {
             return $this->where('user_id', $userId)->get();
-          }
+        }
 
     public function fetchSearchingMonth($inputMonth, $userId)
         {
