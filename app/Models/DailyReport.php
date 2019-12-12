@@ -24,11 +24,11 @@ class DailyReport extends Model
 
     public function getByUserId($userId)
         {
-            return $this->where('user_id', $userId)->get();
+            return $this->where('user_id', $userId)->paginate(10);
         }
 
     public function fetchSearchingMonth($inputMonth, $userId)
         {
-            return $this->where('user_id', $userId)->where('reporting_time', 'Like', $inputMonth . '%')->get();
+            return $this->where('user_id', $userId)->where('reporting_time', 'Like', $inputMonth . '%')->paginate(10);
         }
 }
